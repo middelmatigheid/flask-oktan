@@ -1,0 +1,32 @@
+{% extends 'header-footer.html' %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/login.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Вход в панель администрирования
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form action="/admin" method="post" enctype="multipart/form-data" class="form">
+        <input type="hidden" name="admin_new" value="0">
+        <div class="form-block">
+            <label for="form-login">Логин</label>
+            <input type="text" name="form_login" id="form-login" class="form-login">
+        </div>
+        <div class="form-block">
+            <label for="form-login">Пароль</label>
+            <input type="password" name="form_password" id="form-password" class="form-password">
+        </div>
+        <input type="submit" value="Войти" class="form-submit">
+    </form>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/login.js'></script>
+{% endblock %}

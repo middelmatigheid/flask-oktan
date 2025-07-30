@@ -1,0 +1,132 @@
+/* Main */
+
+.admins {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    margin: 100px auto;
+}
+
+.admins-add {
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    margin: 0 auto 25px auto;
+    width: 260px;
+}
+
+.admins-add:hover:before {
+    transform: scaleX(1);
+    transition: transform 0.25s;
+    transform-origin: left;
+}
+
+.admins-add::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s;
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.form-submit {
+    height: 40px;
+    width: 175px;
+    margin: auto;
+    font-family: Comfortaa, sans-serif;
+    font-weight: 900;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #1A2D42;
+    cursor: pointer;
+    transition: transform .25s;
+    border: none;
+}
+
+.form-submit:hover {
+    transform: scale(1.1);
+}
+
+.admin-info {
+    margin-bottom: 25px;
+}
+
+.admin-login {
+    text-align: center;
+}
+
+.admin-delete {
+    display: block;
+    white-space: nowrap;
+    margin: auto;
+    font-family: Comfortaa, sans-serif;
+    font-weight: 900;
+    background: #fff;
+    border-radius: 8px;
+    color: #1A2D42;
+    cursor: pointer;
+    transition: transform .25s;
+    border: none;
+    margin: 15px auto;
+    padding: 10px 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.admin-delete:hover {
+    transform: scale(1.1);
+}
+
+.log {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Media */
+
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1350px) {
+}
+
+@media (max-width: 1100px) {
+    .admins {
+        width: 90%;
+    }
+}
+
+@media (max-width: 950px) {
+    .admins {
+        flex-direction: column;
+    }
+
+    .logs {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+}

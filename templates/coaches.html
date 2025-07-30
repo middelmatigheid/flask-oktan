@@ -1,0 +1,66 @@
+{% extends 'header-footer.html' %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/coaches.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Тренеры
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="subdivisions-text">
+        <div class="subdivisions-text-inner">
+            Наши тренеры проводят групповые занятия и индивидуальные тренировки по плаванию, аэробике, фитнесу, гимнастике, бодибилдингу, йоге
+        </div>
+    </div>
+
+    <div class="subdivisions-text">
+        <div class="subdivisions-text-inner">
+            Для подробной информации выберите подразделение НМАУ "ФОК "Октан"
+        </div>
+    </div>
+
+    <div class="subdivisions">
+        <a href="/coaches-oktan" class="subdivision">
+            <div class="subdivision-inner">
+                <img src="../static/images/basic/logo-oktan.png" alt="" class="subdivision-img">
+                <div class="subdivision-title">ФОК «Октан»</div>
+            </div>
+        </a>
+        <a href="/coaches-delphin" class="subdivision">
+            <div class="subdivision-inner">
+                <img src="../static/images/basic/delfin.png" alt="" class="subdivision-img">
+                <div class="subdivision-title">Бассейн «Дельфин»</div>
+            </div>
+        </a>
+        <a href="/coaches-olimp" class="subdivision">
+            <div class="subdivision-inner">
+                <img src="../static/images/basic/olimp.png" alt="" class="subdivision-img">
+                <div class="subdivision-title">ФСК «Олимп»</div>
+            </div>
+        </a>
+        <a href="/coaches-vodolei" class="subdivision">
+            <div class="subdivision-inner">
+                <img src="../static/images/basic/vodolej.png" alt="" class="subdivision-img">
+                <div class="subdivision-title">ФОК «Водолей»</div>
+            </div>
+        </a>
+        <a href="/coaches-tonus" class="subdivision">
+            <div class="subdivision-inner">
+                <img src="../static/images/basic/tonus.png" alt="" class="subdivision-img">
+                <div class="subdivision-title">ФК «Тонус»</div>
+            </div>
+        </a>
+        <a href="/coaches-zhemchuzhina" class="subdivision">
+            <div class="subdivision-inner">
+                <img src="../static/images/basic/zhemchuzhina.jpg" alt="" class="subdivision-img">
+                <div class="subdivision-title">ФОЦ «Жемчужина»</div>
+            </div>
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "header-footer.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/schedule.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Расписание
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="schedules-text">
+        <div class="schedules-text-inner">
+            Ознакомьтесь с расписанием занятий в бассейнах, тренажерных, гимнастических и спортивных залах отделений НМАУ «ФОК «ОКТАН»
+        </div>
+    </div>
+
+    <div class="schedules">
+        {% for schedule in schedules %}
+            <div class="schedule">
+                <img src="../static/images/schedules/{{ schedule['schedule_id'] }}.{{ schedule['schedule_img'] }}" alt="" class="schedule-img">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/schedule.js'></script>
+{% endblock %}

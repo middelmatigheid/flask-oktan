@@ -1,0 +1,76 @@
+{% extends "header-footer-admin.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/coaches-subdivision-admin.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Тренеры
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="coaches-text">
+        <div class="coaches-text-inner">
+            Наши тренеры проводят групповые занятия и индивидуальные тренировки по плаванию, аэробике, фитнесу, гимнастике, бодибилдингу, йоге
+        </div>
+    </div>
+
+    <div class="coaches-text">
+        <div class="coaches-text-inner">
+            Добавление/редактирование/удаление тренеров в соответствующем подразделении<br>Обрамление <> первой строки в каждом блоке сведений о тренере сделает его заголовком
+        </div>
+    </div>
+
+    <div class="coaches">
+        {% for coach in coaches %}
+            <form action="/coaches-{{ coach['coach_subdivision'] }}-admin" method="post" enctype="multipart/form-data" class="coach">
+                <input type="hidden" name="coach_is_deleted" value="0" class="coach-is-deleted">
+                <input type="hidden" name="coach_id" value="{{ coach['coach_id'] }}">
+                <input type="hidden" name="coach_subdivision" value="{{ coach['coach_subdivision'] }}">
+                <div class="coach-img {{ coach['coach_id'] }} {{ coach['coach_img'] }}"></div>
+                <div class="coach-info">
+                    <textarea class="coach-info-title" name="coach_name">{{ coach['coach_name'] }}</textarea>
+                    {% for i in range(coach['coach_info']|length) %}
+                    <div class="coach-info-ul">
+                        <ul class="coach-info-list">
+                            {% for x in coach['coach_info'][i] %}
+                                <li class="coach-info-list-item">
+                                    <textarea name="coach_list_item {{ i }}">{{ x }}</textarea>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="coach-info-buttons">
+                            <div class="coach-info-add-list-item">Добавить поле</div>
+                            <div class="coach-info-delete-list-item">Удалить поле</div>
+                            <div class="coach-info-delete-list">Удалить блок</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="coach-info-add-list">Добавить блок</div>
+                    <div>
+                        <div class="coach-info-phone">
+                            Телефон для связи: <textarea name="coach_phone">{{ coach['coach_phone'] }}</textarea>
+                        </div>
+                        <div class="coach-info-address">
+                            <textarea name="coach_address">{{ coach['coach_address'] }}</textarea>
+                        </div>
+                    </div>
+                    <div class="coach-info-buttons">
+                        <input type="file" accept="image/png, image/jpeg, image/jpg" name="coach_img">
+                        <input type="submit" value="Сохранить">
+                        <div class="coach-delete">Удалить тренера</div>
+                    </div>
+                </div>
+            </form>
+        {% endfor %}
+        <div class="coaches-add">Добавить тренера</div>
+    </div>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/coaches-subdivision-admin.js'></script>
+{% endblock %}

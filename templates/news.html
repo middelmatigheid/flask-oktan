@@ -1,0 +1,28 @@
+{% extends "header-footer.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/news.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Новости
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="news">
+        <div class="news-img {{ news['news_img'] }}"></div>
+        <div class="news-title">{{ news['news_title'] }}</div>
+        <div class="news-text">
+            {{ news['news_text'] }}
+        </div>
+        <div class="news-date">{{ news['news_date'] }}</div>
+    </div>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/news.js'></script>
+{% endblock %}

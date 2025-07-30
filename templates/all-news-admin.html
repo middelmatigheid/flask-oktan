@@ -1,0 +1,24 @@
+{% extends "header-footer-admin.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/all-news-admin.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Новости
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <a href="/news-admin/-1" class="news-add">Добавить новость</a>
+    <div class="news-block">
+        {% include "add-news-admin.html" %}
+    </div>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/all-news-admin.js'></script>
+{% endblock %}

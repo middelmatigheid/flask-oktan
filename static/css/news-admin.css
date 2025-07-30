@@ -1,0 +1,138 @@
+/* Main */
+
+.news-block {
+    margin-top: 100px;
+}
+
+.news {
+    width: 1000px;
+    margin: 30px auto;
+    padding: 35px;
+    background: linear-gradient(45deg, #a2b9cf, #c2ccd1, #d5d5e7);
+    border-radius: 25px;
+}
+
+.news-img {
+    height: 500px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    border-radius: 25px;
+}
+
+.news-title {
+    height: 50px;
+    font-weight: 900;
+    font-size: 40px;
+    resize: vertical;
+    width: 100%;
+}
+
+.news-date {
+    margin-bottom: 25px;
+}
+
+.news-text {
+    margin: 25px 0;
+    word-break: break-all;
+    resize: vertical;
+    width: 100%;
+}
+
+.news-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.news-add-img-text, .news-delete {
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+}
+
+.news-add-img-text:hover:before, .news-delete:hover:before {
+    transform: scaleX(1);
+    transition: transform 0.25s;
+    transform-origin: left;
+}
+
+.news-add-img-text::before, .news-delete::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s;
+}
+
+.news-add-img-input {
+    margin-left: 15px;
+    cursor: default;
+    pointer-events: none;
+    width: 110px;
+}
+
+.news-add-img-input[type="file"]::file-selector-button {
+    position: absolute;
+    left: -100vw;
+}
+
+.form-save {
+    height: 40px;
+    width: 175px;
+    font-family: Comfortaa, sans-serif;
+    font-weight: 900;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #1A2D42;
+    cursor: pointer;
+    transition: transform .25s;
+    border: none;
+}
+
+.form-save:hover {
+    transform: scale(1.1);
+}
+
+/* Media */
+
+@media (max-width: 1600px) {
+    .news-title {
+        font-size: 28px;
+    }
+
+    .news-button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .news-title {
+        font-size: 20px;
+    }
+
+    .news-button, .news-text, .news-date {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .news {
+        width: 90%;
+    }
+}
+
+@media (max-width: 950px) {
+    .news-buttons {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+}

@@ -1,0 +1,49 @@
+{% extends "header-footer-admin.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/schedule-admin.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Расписание
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="schedules-text">
+        <div class="schedules-text-inner">
+            Ознакомьтесь с расписанием занятий в бассейнах, тренажерных, гимнастических и спортивных залах отделений НМАУ «ФОК «ОКТАН»
+        </div>
+    </div>
+
+    <form action="/schedule-admin" method="post" enctype="multipart/form-data" class="schedules">
+        {% for schedule in schedules %}
+            <div class="schedule pos-{{ schedule['schedule_position'] }}">
+                <input type="hidden" value="{{ schedule['schedule_id'] }}" name="schedule_id">
+                <input type="hidden" value="0" name="schedule_is_deleted" class="schedule-is-deleted">
+                <input type="hidden" value="{{ schedule['schedule_position'] }}" name="schedule_position" class="schedule-position">
+                <img src="../static/images/schedules/{{ schedule['schedule_id'] }}.{{ schedule['schedule_img'] }}" alt="" class="schedule-img">
+                <div class="schedule-bg"></div>
+                <div class="schedule-buttons">
+                    <div class="schedule-move-up">Переместить вверх</div>
+                    <div class="schedule-move-down">Переместить вниз</div>
+                    <div class="schedule-delete">Удалить расписание</div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="form-buttons">
+            <div class="form-add-schedule">
+                <label for="file" class="form-add-schedule-text">Добавить новое расписание</label>
+                <input type="file" accept="image/png, image/jpeg, image/jpg" id="file" name="schedule_img" class="form-file">
+            </div>
+            <input type="submit" value="Сохранить" class="form-save">
+        </div>
+    </form>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/schedule-admin.js'></script>
+{% endblock %}

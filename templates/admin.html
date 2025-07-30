@@ -1,0 +1,49 @@
+{% extends 'header-footer-admin.html' %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/admin.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Панель администрирования
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="admins">
+        <div class="admins-edit">
+            <div class="admins-add">Добавить администратора</div>
+            <form action="/admin" method="post" enctype="multipart/form-data" class="form">
+                <input type="hidden" name="admin_new" value="1">
+                <div class="form-block">
+                    <label for="form-login">Логин</label>
+                    <input type="text" name="form_login" id="form-login" class="form-login">
+                </div>
+                <div class="form-block">
+                    <label for="form-login">Пароль</label>
+                    <input type="password" name="form_password" id="form-password" class="form-password">
+                </div>
+                <input type="submit" value="Добавить" class="form-submit">
+            </form>
+            {% if flag %}
+                <div class="admin-info">Администратор с данным логином уже есть</div>
+            {% endif %}
+            {% for admin in admins %}
+                <div class="admin">
+                    <div class="admin-login">{{ admin['admin_login'] }}</div>
+                    <a href="/admin/delete/{{ admin['admin_login'] }}" class="admin-delete">Удалить администратора</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="logs">
+            {% include 'add-logs.html' %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/admin.js'></script>
+{% endblock %}

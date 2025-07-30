@@ -1,0 +1,130 @@
+/* Main */
+
+.subdivisions-text {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 0 50px;
+}
+
+.subdivisions-text-inner {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.subdivisions {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 70px;
+    margin: auto;
+    width: 890px;
+}
+
+.subdivision {
+    width: 250px;
+    height: 270px;
+    background: linear-gradient(45deg,#a2b9cf,#c2ccd1,#d5d5e7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s;
+    position: relative;
+}
+
+.subdivision:hover {
+    transition: transform 0.25s;
+    transform: scale(1.05);
+}
+
+.subdivision-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.subdivision-img {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.subdivision-title {
+    color: #1A2D42;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Media */
+
+@media (max-width: 1600px) {
+    .subdivisions-text {
+        font-size: 22px;
+        margin: 50px 0;
+    }
+}
+
+@media (max-width: 1350px) {
+    .subdivisions-text {
+        font-size: 16px;
+    }
+
+    .subdivisions-text-inner {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .subdivisions {
+        grid-template-columns: repeat(3, 200px);
+        width: 650px;
+        gap: 25px;
+    }
+
+    .subdivision {
+        height: 220px;
+        width: 200px;
+    }
+
+    .subdivision-img {
+        width: 160px;
+    }
+
+    .subdivision-title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 950px) {
+    .subdivisions {
+        grid-template-columns: repeat(2, 250px);
+        gap: 50px;
+        width: 550px;
+    }
+
+    .subdivision {
+        width: 250px;
+        height: 270px;
+    }
+}
+
+@media (max-width: 600px) {
+    .subdivisions {
+        grid-template-columns: repeat(2, 220px);
+        gap: 25px;
+        width: 465px;
+    }
+
+    .subdivision {
+        width: 220px;
+        height: 240px;
+    }
+}

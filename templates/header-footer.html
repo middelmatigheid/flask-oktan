@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФОК Октан</title>
+    <link rel="shortcut icon" href="../static/images/basic/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/header-footer.css">
+    {% block css_link %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav">
+                <a href="#" class="header-logo">
+                    <img src="../static/images/basic/logo-oktan-white.png" alt="" class="header-logo-img">
+                </a>
+
+                <div class="header-list">
+                    <div class="header-list-item">
+                        <a href="/" class="header-list-item-link">Главная</a>
+                    </div>
+                    <div class="header-list-item">
+                        <a href="/services-and-prices" class="header-list-item-link">Услуги и цены</a>
+                    </div>
+                    <div class="header-list-item">
+                        <a href="/coaches" class="header-list-item-link">Тренеры</a>
+                    </div>
+                    <div class="header-list-item">
+                        <a href="/schedule" class="header-list-item-link">Расписание</a>
+                    </div>
+                    <div class="header-list-item">
+                        <a href="#" class="header-list-item-link">Контакты</a>
+                    </div>
+                    <div class="header-list-item">
+                        <a href="/news" class="header-list-item-link">Новости</a>
+                    </div>
+                </div>
+
+                <div class="header-btn">
+                    <a href="#" class="header-btn-link">Записаться</a>
+                </div>
+            </div>
+        </nav>
+
+        {% block header_text %}{% endblock %}
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="contacts">
+            Москва<br>+8 888 888 88 88
+        </div>
+        <div>
+            ФОК ОКТАН<br> 2025г.
+        </div>
+    </footer>
+
+    {% block js_link %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* Main */
+
+.coaches-text {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 0 50px;
+}
+
+.coaches-text-inner {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.coaches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.coach {
+    width: 1200px;
+    height: 600px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #a2b9cf, #c2ccd1, #d5d5e7);
+    margin-bottom: 40px;
+    display: flex;
+    position: relative;
+}
+
+.coach-img {
+    width: 400px;
+    height: 530px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translate(0, -50%);
+}
+
+.coach-info {
+    padding: 35px;
+    position: absolute;
+    top: 50%;
+    left: 435px;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.coach-info textarea {
+    resize: vertical;
+    width: 100%;
+}
+
+.coach-info-title {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.coach-info-list {
+    padding-left: 20px;
+}
+
+.coach-info-list-item {
+    padding: 2px 0;
+}
+
+.coach-info-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+/* Media */
+
+@media (max-width: 1600px) {
+    .coaches-text {
+        font-size: 22px;
+        margin: 50px 0;
+    }
+}
+
+@media (max-width: 1350px) {
+    .coaches-text {
+        font-size: 16px;
+    }
+
+    .coaches-text-inner {
+        max-width: 75%;
+    }
+
+    .coach {
+        width: 900px;
+        height: 700px;
+    }
+
+    .coach-img {
+        height: 630px;
+    }
+
+    .coach-info-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 950px) {
+    .coach {
+        width: 550px;
+        height: 1000px;
+    }
+
+    .coach-img {
+        height: 400px;
+        width: 300px;
+        top: 35px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .coach-info {
+        top: 435px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        gap: 15px;
+    }
+
+    .coach-info-title {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .coach-info-phone {
+        text-align: center;
+    }
+
+    .coach-info-address {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .coach {
+        width: 450px;
+        height: 1000px;
+    }
+
+    .coach-img {
+        height: 400px;
+        width: 300px;
+        top: 35px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .coach-info {
+        top: 435px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        gap: 15px;
+    }
+}

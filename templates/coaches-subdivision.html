@@ -1,0 +1,56 @@
+{% extends "header-footer.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/coaches-subdivision.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Тренеры
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="coaches-text">
+        <div class="coaches-text-inner">
+            Наши тренеры проводят групповые занятия и индивидуальные тренировки по плаванию, аэробике, фитнесу, гимнастике, бодибилдингу, йоге
+        </div>
+    </div>
+
+    <div class="coaches">
+        {% for coach in coaches %}
+            <div class="coach">
+                <div class="coach-img {{ coach['coach_id'] }} {{ coach['coach_img'] }}"></div>
+                <div class="coach-info">
+                    <div class="coach-info-title">{{ coach['coach_name'] }}</div>
+                    {% for info in coach['coach_info'] %}
+                    <div>
+                        {% if info[0][0] == '<' and info[0][-1] == '>' %}
+                            <div class="coach-info-title">{{ info.pop(0)[1:-1] }}</div>
+                        {% endif %}
+                        <ul class="coach-info-list">
+                            {% for x in info %}
+                                <li class="coach-info-list-item">{{ x }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                    <div>
+                        <div class="coach-info-phone">
+                            Телефон для связи: {{ coach['coach_phone'] }}
+                        </div>
+                        <div class="coach-info-address">
+                            {{ coach['coach_address'] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/coaches-subdivision.js'></script>
+{% endblock %}

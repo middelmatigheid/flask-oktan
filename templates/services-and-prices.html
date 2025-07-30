@@ -1,0 +1,44 @@
+{% extends "header-footer.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/services-and-prices.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Услуги и цены
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="tables-text">
+        <div class="tables-text-inner">
+            Тарифы на услуги по проведению занятий, оказываемые НМАУ «ФОК «ОКТАН» на платной основе для физических и юридических лиц на 2025 год.
+        </div>
+    </div>
+
+    <div class="tables">
+        {% for i in range(tables|length) %}
+            <div class="table-title">
+                {% for x in tables[i].pop(0).split('\\\\') %}
+                    {{ x }}<br>
+                {% endfor %}
+            </div>
+            <table class="table">
+                {% for row in tables[i][0] %}
+                <tr class="table-row">
+                    {% for cell in row %}
+                        <td colspan="{{ cell[0] }}" class="table-cell">
+                            {% for x in cell[1].split('\\\\') %}
+                                {{ x }}<br>
+                            {% endfor %}
+                        </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+    </div>
+{% endblock %}

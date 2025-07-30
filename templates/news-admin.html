@@ -1,0 +1,35 @@
+{% extends "header-footer-admin.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/news-admin.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Новости
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form action="/news-admin/{{ news['news_id'] }}" method="post" enctype="multipart/form-data" class="news">
+        <input type="hidden" value="{{ news['news_id'] }}" name="news_id">
+        <div class="news-img {{ news['news_id'] }} {{ news['news_img'] }}"></div>
+        <textarea class="news-title" name="news_title">{{ news['news_title'] }}</textarea>
+        <textarea class="news-text" name="news_text">{{ news['news_text'] }}</textarea>
+        <div class="news-date">{{ news['news_date'] }}</div>
+        <div class="news-buttons">
+            <input type="submit" value="Сохранить" class="form-save">
+            <div class="news-add-img">
+                <label for="file" class="news-add-img-text">Загрузить изображение</label>
+                <input type="file" accept="image/png, image/jpeg, image/jpg" name="news_img" id="file" class="news-add-img-input">
+            </div>
+            <a href="/news-admin/delete/{{ news['news_id'] }}" class="news-delete">Удалить новость</a>
+        </div>
+    </form>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/news-admin.js'></script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "header-footer.html" %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="../static/css/all-news.css">
+{% endblock %}
+
+{% block header_text %}
+    <div class="header-text">
+        <div class="header-text-inner">
+            Новости
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="news-block">
+        {% include "add-news.html" %}
+    </div>
+{% endblock %}
+
+{% block js_link %}
+    <script type="text/javascript" src='../static/js/all-news.js'></script>
+{% endblock %}

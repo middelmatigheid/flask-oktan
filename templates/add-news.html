@@ -1,0 +1,15 @@
+{% for x in news %}
+    <div class="news">
+        <div class="news-img {{ x['news_img'] }}"></div>
+        <div class="news-title">{{ x['news_title'] }}</div>
+        <div class="news-text">
+            {% if x['news_text']|length < 250 %}
+                {{ x['news_text'] }}
+            {% else %}
+                {{ x['news_text'][:250] }}...
+            {% endif %}
+        </div>
+        <div class="news-date">{{ x['news_date'] }}</div>
+        <a href="/news/{{ x['news_id'] }}" class="news-button">Читать далее</a>
+    </div>
+{% endfor %}
