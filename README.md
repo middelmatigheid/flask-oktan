@@ -43,7 +43,7 @@ All admins actions are logged to the database, the logs are stored for 100 days
 - Pandas - for working with excel files
 - HTML, CSS, JavaScript
 
-# Downloading and running the bot
+# Downloading and running the website
 
 ### 1. Download [Python](https://www.python.org/) and IDE
 
